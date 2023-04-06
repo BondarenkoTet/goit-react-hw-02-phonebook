@@ -34,7 +34,7 @@ changeFilter= (event) => {
 
 getVisibleContacts = () => {
 return this.state.contacts.filter(contact =>
-  contact.name.toLowerCase().includes(this.state.filter))
+  contact.name.toLowerCase().includes(this.state.filter.toLowerCase()))
 }
 deleteContact = contactId => {
   this.setState(prevState => ({
@@ -47,19 +47,20 @@ render () {
   
   return (
     <>
-    <h1>Phonebook</h1>
-      <Form onSubmit={this.formSubmithandler}
-        addContact={this.handleAddContact}
-        contacts={this.state.contacts}
-      />
-
-    <h2>Contacts</h2> 
-    <Filter
-      value={this.state.filter}
-      onChange={this.changeFilter}/>
-    <ContactList 
-      contactsArr={visibleContacts}
-      deleteContact={this.deleteContact} />
+      <h1>Phonebook</h1>
+        <Form onSubmit={this.formSubmithandler}
+          addContact={this.handleAddContact}
+          contacts={this.state.contacts}
+        />
+      <h2>Contacts</h2> 
+        <Filter
+          value={this.state.filter}
+          onChange={this.changeFilter}
+        />
+        <ContactList 
+          contactsArr={visibleContacts}
+          deleteContact={this.deleteContact}
+        />
     </>
     )  
 

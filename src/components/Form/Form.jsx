@@ -4,7 +4,6 @@ import css from "./Form.module.css"
 
 class Form extends React.Component {
     state = {
-        contacts: [],
         name: '',
         number: '',
     }
@@ -63,7 +62,7 @@ class Form extends React.Component {
                             id={this.numberInputId}
                     />
                 </label>
-                <button tupe="Submit" className={css.btn}>Add contact</button>
+                <button type="Submit" className={css.btn}>Add contact</button>
             </form>     
             )
         }
